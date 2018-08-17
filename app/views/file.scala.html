@@ -1,0 +1,12 @@
+@()( implicit request: RequestHeader, messagesProvider: MessagesProvider )
+@import helper._
+
+@helper.form(routes.HomeController.uploadFile(), 'encType -> "multipart/form-data"){
+    @CSRF.formField
+
+
+    <div class="actions">
+        <input type="file" id="file" name="file">
+        <input type="submit" value="join!!" class="">
+    </div>
+}

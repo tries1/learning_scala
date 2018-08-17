@@ -1,0 +1,14 @@
+@(joinForm: Form[Member])( implicit request: RequestHeader, messagesProvider: MessagesProvider )
+@import helper._
+
+@helper.form(CSRF(routes.HomeController.save())){
+    @inputText(joinForm("userid"), '_label -> "회원아이디")
+    @inputPassword(joinForm("password"), '_label -> "비밀번호")
+    @inputText(joinForm("nickname"), '_label -> "닉네임")
+    @inputText(joinForm("email"), '_label -> "이메일")
+    @inputDate(joinForm("regdate"), '_label -> "등록일자")
+
+    <div class="actions">
+        <input type="submit" value="join!!" class="">
+    </div>
+}

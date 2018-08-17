@@ -1,5 +1,14 @@
 @(members: List[Member])
 
+    @scripts = {
+        <script type="text/javascript">
+                $(document).ready(function () {
+                    console.log('hi!#!');
+                    alert(3232);
+                });
+        </script>
+    }
+
     @main("list") {
         @for(member <- members) {
             <p>순서 : @member.mid</p>
