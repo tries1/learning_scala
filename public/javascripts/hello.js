@@ -3,5 +3,5 @@ if (window.console) {
 }
 
 $(document).ready(function(){
-  alert(111);
+  //alert(111);
 });

@@ -6,7 +6,7 @@ import anorm.SqlParser._
 case class Computer (id: Option[Long] = None, name: String, introduced: Option[Date], discontinued: Option[Date], companyId: Option[Long])
 
 object Computer {
-  val simple = {
+  /*val simple = {
     get[Option[Long]]("computer.id") ~
     get[String]("computer.name") ~
     get[Option[Date]]("computer.introduced") ~
@@ -19,5 +19,5 @@ object Computer {
 
   val withCompany = Computer.simple ~ (Company.simple ?) map {
     case computer~company => (computer, company)
-  }
+  }*/
 }

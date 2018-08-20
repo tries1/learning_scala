@@ -17,6 +17,8 @@ libraryDependencies ++= Seq(jdbc
   , guice
   , "com.typesafe.play" % "anorm_2.12" % "2.5.3"
   , "mysql" % "mysql-connector-java" % "5.1.34"
+  , "com.typesafe.slick" %% "slick" % "3.2.3"
+  , "org.scalaz" %% "scalaz-core" % "7.2.26"
   /*, "org.scalatestplus.play" % "scalatestplus-play_2.12" % "3.1.2" % Test*/)
 
 unmanagedResourceDirectories in Test <+= baseDirectory(_ / "target/web/public/test")

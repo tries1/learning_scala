@@ -18,3 +18,10 @@ GET     /form                       controllers.HomeController.form
 GET     /file                       controllers.HomeController.file
 POST    /save                       controllers.HomeController.save
 POST    /upload                       controllers.HomeController.uploadFile
+
+#Computer
+#GET     /computers/home             controllers.ComputerController.home
+#GET     /computers             controllers.ComputerController.list(p: Int ?= 0, s: Int ?= 2, f ?= "")
+
+#User
+#GET      /users                     controllers.UserC

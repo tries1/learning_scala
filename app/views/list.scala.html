@@ -1,0 +1,7 @@
+@(currentPage: Page[(Computer, Option[Company])], currentOrderBy: Int, currentFilter: String)( implicit flash: Flash, messages: Messages )
+@import helper._
+
+
+@computerMain("Computer Database") {
+    <h1>Messages("computers.list.title", currentPage.total)</h1>
+}
