@@ -24,4 +24,4 @@ POST    /upload                       controllers.HomeController.uploadFile
 #GET     /computers             controllers.ComputerController.list(p: Int ?= 0, s: Int ?= 2, f ?= "")
 
 #User
-#GET      /users                     controllers.UserC
+GET      /users                     controllers.UserController.getUser

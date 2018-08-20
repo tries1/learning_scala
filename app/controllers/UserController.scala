@@ -1,14 +1,14 @@
 package controllers
 
-import javax.inject.Inject
+import javax.inject._
 import play.api.mvc.{AbstractController, ControllerComponents}
 import services.UserService
 
 @Singleton
 class UserController @Inject()(cc: ControllerComponents, us: UserService) extends AbstractController(cc) {
 
-  def getUser() = Action {
-    Ok(us.getUsers)
+  def getUser() = Action.async {
+    us.getUsers("abc") map { users => Ok(users) }
   }
 
   /*def getUser(name: String) = Action {

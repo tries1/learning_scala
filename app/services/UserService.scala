@@ -4,16 +4,16 @@ import dao.UserDao
 import scalaz.Scalaz._
 import scalaz.ListT._
 import models.UserSchema._
-import javax.inject.Inject
+import javax.inject.{Inject, Singleton}
 
 import scala.concurrent.{ExecutionContext, Future}
 
+@Singleton
 class UserService @Inject()(userDao: UserDao)(implicit ec: ExecutionContext) {
 
-
-  def getUsers: Future[Seq[UserRow]] = {
+  def getUsers(name: String): Future[Seq[UserRow]] = {
     val result = for {
-      u <- listT(userDao.findByName("abc").map(_.toList))
+      u <- listT(userDao.findByName(name).map(_.toList))
     } yield UserRow(u.id, u.name, u.email)
     result.run
   }
