@@ -14,8 +14,13 @@ class UserService @Inject()(userDao: UserDao)(implicit ec: ExecutionContext) {
   def getUsers(name: String): Future[Seq[UserRow]] = {
     val result = for {
       u <- listT(userDao.findByName(name).map(_.toList))
-    } yield UserRow(u.id, u.name, u.email)
+    } yield UserRow(u.id, u.name, u.email, u.createdAt)
+
     result.run
+  }
+
+  def save(user: UserRow): Unit ={
+    userDao.save(user)
   }
 
   /*def getUsers: Future[Seq[UserRow]] = {
