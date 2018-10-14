@@ -4,25 +4,30 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET         /                    controllers.HomeController.list
+GET         /                      controllers.HomeController.list
 # An example controller showing how to use dependency injection
-GET         /count               controllers.CountController.count
+GET         /count                 controllers.CountController.count
 # An example controller showing how to write asynchronous code
-GET         /message             controllers.AsyncController.message
+GET         /message               controllers.AsyncController.message
 
 # Map static resources from the /public folder to the /assets URL path
-GET         /assets/*file        controllers.Assets.versioned(path="/public", file: Asset)
+GET         /assets/*file          controllers.Assets.versioned(path="/public", file: Asset)
 
-GET         /list                controllers.HomeController.list
-GET         /form                controllers.HomeController.form
-GET         /file                controllers.HomeController.file
-POST        /save                controllers.HomeController.save
-POST        /upload              controllers.HomeController.uploadFile
+GET         /list                  controllers.HomeController.list
+GET         /form                  controllers.HomeController.form
+GET         /file                  controllers.HomeController.file
+POST        /save                  controllers.HomeController.save
+POST        /upload                controllers.HomeController.uploadFile
 
 #Computer
 #GET     /computers/home             controllers.ComputerController.home
 #GET     /computers             controllers.ComputerController.list(p: Int ?= 0, s: Int ?= 2, f ?= "")
 
 #User
-GET         /users               controllers.UserController.getUser
-POST        /users               controllers.UserController.save
+GET         /users                 controllers.UserController.getUser
+POST        /users                 controllers.UserController.save
+GET         /test/response1        controllers.HomeController.testResponse1
+GET         /test/response2        controllers.HomeController.testResponse2
+GET         /test/response3        controllers.HomeController.testResponse3
+GET         /test/request1         controllers.HomeController.testRequest1
+GET         /test/request2         controllers.HomeController.testRequest2
